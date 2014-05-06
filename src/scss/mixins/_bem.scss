@@ -1,0 +1,18 @@
+// Mixins for BEM
+// @see http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+// -------------------------
+@mixin e($name) {
+    @at-root {
+        &__#{$name} {
+            @content;
+        }
+    }
+}
+
+@mixin m($name) {
+    @at-root {
+        &--#{$name} {
+            @content;
+        }
+    }
+}

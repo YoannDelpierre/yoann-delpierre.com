@@ -1,0 +1,5 @@
+// File CSS container
+.container {
+    margin: 0 auto;
+    @include rem(max-width,$largeScreen);
+}

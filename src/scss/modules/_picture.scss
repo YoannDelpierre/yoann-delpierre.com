@@ -1,0 +1,19 @@
+// // File CSS picture
+.picture {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+}
+.picture--about {
+    background-image: url('/images/cambodge2.jpg');
+}
+.picture--contact {
+    background-image: url('/images/kitzbuhel.jpg');
+}
+.picture--skills {
+    background-image: url('/images/chine.jpg');
+}
