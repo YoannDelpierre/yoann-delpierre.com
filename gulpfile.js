@@ -10,11 +10,14 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     connect = require('gulp-connect'),
     uglify = require('gulp-uglify'),
-    jshint = require('gulp-jshint');
+    jshint = require('gulp-jshint'),
+    plumber = require('gulp-plumber');
 
 gulp.task('styles', function() {
     return gulp.src('src/scss/**/*.scss')
+        .pipe(plumber())
         .pipe(sass())
+        .pipe(plumber.stop())
         .pipe(prefix("last 2 versions", "> 5%", "ie 8", "ie 7", { cascade: true }))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifyCss())

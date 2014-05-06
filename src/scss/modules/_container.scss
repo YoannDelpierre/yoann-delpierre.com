@@ -1,5 +1,6 @@
 // File CSS container
 .container {
+    position: relative;
     margin: 0 auto;
     @include rem(max-width,$largeScreen);
 }

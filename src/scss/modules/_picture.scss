@@ -1,8 +1,9 @@
-// // File CSS picture
+/*// File CSS picture
 .picture {
     position: relative;
     z-index: 1;
     overflow: hidden;
+    background: darken($colorLight,2);
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -17,4 +18,4 @@
 }
 .picture--contact {
     background-image: url('/images/chine.jpg');
-}
+}*/
