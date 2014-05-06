@@ -1,0 +1,33 @@
+// My own reset
+@viewport {
+   width: device-width;
+   zoom: 1;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    color: $colorText;
+    font-size: 62.5%;
+    height: 100%;
+    width: 100%;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #333;
+    height: 100%;
+    width: 100%;
+    @include font-size(1.4);
+}
+
+a {
+    text-decoration: none;
+    color: $colorText;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

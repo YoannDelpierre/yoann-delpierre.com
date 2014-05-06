@@ -1,6 +1,7 @@
 // // File CSS picture
 .picture {
     position: relative;
+    z-index: 1;
     overflow: hidden;
     background-size: cover;
     background-position: center center;
@@ -9,11 +10,11 @@
     width: 100%;
 }
 .picture--about {
-    background-image: url('/images/cambodge2.jpg');
-}
-.picture--contact {
-    background-image: url('/images/kitzbuhel.jpg');
+    background-image: url('/images/islande1.jpg');
 }
 .picture--skills {
+    background-image: url('/images/vietnam3.jpg');
+}
+.picture--contact {
     background-image: url('/images/chine.jpg');
 }

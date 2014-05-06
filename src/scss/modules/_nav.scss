@@ -8,16 +8,16 @@
         background: rgba($colorLight, 0);
         transition: background .2s ease-out;
         &:hover {
-            background:rgba(0, 0, 0, .15);
+            background:rgba(0, 0, 0, .02);
         }
         a {
             display: block;
             text-align: center;
-            color: $colorLight;
             font-weight: 700;
             padding: 5%;
             @include font-size(1.6);
             backface-visibility: hidden;
+            perspective: 1000;
             transition: transform .4s ease-out;
             &:hover {
                 transform: translateY(10%);
@@ -27,5 +27,11 @@
             display: block;
             width: auto;
         }
+    }
+    &--isVisible {
+        display: block;
+    }
+    @media only screen and (max-width:$smallScreen) {
+        display: none;
     }
 }

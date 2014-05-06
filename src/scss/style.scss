@@ -10,32 +10,7 @@
 @import 'mixins/all';
 
 // My own CSS
-
-html {
-    font-family: 'Open Sans', sans-serif;
-    color: $colorText;
-    font-size: 62.5%;
-    height: 100%;
-    width: 100%;
-}
-
-body {
-    background-color: #333;
-    height: 100%;
-    width: 100%;
-    @include font-size(1.4);
-}
-
-a {
-    text-decoration: none;
-    color: $colorText;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+@import 'reset';
 
 // Import modules
 @import 'modules/all';
