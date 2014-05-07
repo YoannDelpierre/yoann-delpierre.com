@@ -4,7 +4,6 @@ var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     minifyCss = require('gulp-minify-css'),
     lintCss = require('gulp-csslint'),
-    concatCss = require('gulp-concat-css'),
     prefix = require('gulp-autoprefixer'),
     imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
@@ -22,8 +21,8 @@ gulp.task('styles', function() {
         .pipe(rename({suffix: '.min'}))
         .pipe(minifyCss())
         .pipe(gulp.dest('./app/css'))
-        .pipe(connect.reload());
-        //.pipe(notify({message: 'CSS done'}));
+        .pipe(connect.reload())
+        .pipe(notify({message: 'CSS done'}));
 });
 
 gulp.task('lintCss', function() {
@@ -80,8 +79,8 @@ gulp.task('jshint', function() {
 // JS concat, strip debugging and minify
 gulp.task('scripts', function() {
     gulp.src('./src/js/*.js')
-        .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
+        .pipe(uglify())
         .pipe(gulp.dest('./app/scripts/'))
         .pipe(connect.reload());
 });
@@ -97,8 +96,8 @@ gulp.task('images', ['clean'], function() {
 gulp.task('html', function() {
     return gulp.src('./src/*.html')
         .pipe(gulp.dest('./app'))
-        .pipe(connect.reload());
-        //.pipe(notify({message: 'Reload HTML done'}));
+        .pipe(connect.reload())
+        .pipe(notify({message: 'Reload HTML done'}));
 });
 
 gulp.task('watch', function() {
