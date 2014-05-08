@@ -20,8 +20,8 @@ gulp.task('styles', function() {
     return gulp.src('src/scss/**/*.scss')
         .pipe(plumber())
         .pipe(sass())
-        .pipe(plumber.stop())
         .pipe(prefix("last 2 versions", "> 5%", "ie 8", "ie 7", { cascade: true }))
+        .pipe(plumber.stop())
         .pipe(rename({suffix: '.min'}))
         .pipe(minifyCss())
         .pipe(gulp.dest('./app/css'))
@@ -90,7 +90,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('images', ['clean'], function() {
-    return gulp.src('./src/images/*')
+    return gulp.src(['./src/images/*.jpg', './src/images/**/*.jpg'])
         .pipe(imagemin({
             optimizationLevel: 5, progressive: true, interlaced: true
         }))

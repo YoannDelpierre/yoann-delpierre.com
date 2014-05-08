@@ -1,6 +1,7 @@
 // File CSS contact
 .contact {
     width: 100%;
+    overflow: hidden;
     &__item {
         width: 33.33%;
         text-align: center;
@@ -12,6 +13,9 @@
                 transform: scale(1.05,1.05);
                 transition: opacity .3s ease-in;
                 opacity: .2;
+            }
+            @media only screen and (max-width:$smallScreen) {
+                @include font-size(7);
             }
         }
     }

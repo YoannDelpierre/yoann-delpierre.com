@@ -19,16 +19,9 @@
             &:hover {
                 transform: translateY(-5px);
             }
-        }
-        @media only screen and (max-width:$smallScreen) {
-            display: none;
-            width: auto;
-            &--isVisible {
-                display: block;
+            @media only screen and (max-width:$smallScreen) {
+                @include font-size(1.3);
             }
         }
-    }
-    @media only screen and (max-width:$smallScreen) {
-        display: none;
     }
 }
