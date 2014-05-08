@@ -5,13 +5,15 @@
         <title>Yoann Delpierre</title>
         <meta name="keywords" content="yoann, delpierre, yoann delpierre, html, html5, css, css3, front-end, javascript, angularjs, json, trail, course, running, france, paris, gulp, git"></meta>
         <link rel="stylesheet" type="text/css" href="./css/style.min.css">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
     </head>
     <body>
-        <div class="logo">YD</div>
         <header class="header">
             <div class="container">
-                <ul class="nav">
+                <ul class="list nav">
+                    <li class="nav__item">
+                        <a href="#intro">Accueil</a>
+                    </li>
                     <li class="nav__item">
                         <a href="#about">&Agrave; propos</a>
                     </li>
@@ -24,23 +26,45 @@
                 </ul>
             </div>
         </header>
-        <section role="intro" class="content picture picture--intro">
+        <section role="intro" id="intro" class="content picture picture--intro">
             <div class="container content__block content__block--intro">
-                <h1>Yoann Delpierre</h1>
-                <p>30 ans, Paris 14ème</p>
+                <h1>Yoann</h1>
+                <p>30 ans, en couple, Paris 14ème</p>
                 <p>Intégrateur/Développeur Web @ <a class="underline" href="http://www.poliris.fr" target="_new">Poliris</a></p>
             </div>
         </section>
-        <section role="about" id="about" class="content">
+        <section role="about" id="about" class="content picture picture--about">
             <div class="container content__block">
+                <h2>A propos</h2>
+                <p>Passionné depuis 10 ans par </p>
             </div>
         </section>
-        <section role="skills" id="skills" class="content">
+        <section role="skills" id="skills" class="content picture picture--skills">
             <div class="container content__block">
+                <h2>Compétences</h2>
             </div>
         </section>
-        <section role="contact" id="contact" class="content">
+        <section role="contact" id="contact" class="content picture picture--contact">
             <div class="container content__block">
+                <h2>Contact</h2>
+                <p>Si vous souhaitez me contacter, vous pouvez utiliser les moyens suivants</p>
+                <ul class="list contact">
+                    <li class="contact__item">
+                        <a href="mailto:contact@yoann-delpierre.com" title="Contact par email">
+                            <i class="icon-email"></i>
+                        </a>
+                    </li>
+                    <li class="contact__item">
+                        <a href="http://www.twitter.com/ydelpierre" title="Contact par Twitter">
+                            <i class="icon-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="contact__item">
+                        <a href="http://www.github.com/YoannDelpierre" title="Contact par Github">
+                            <i class="icon-github"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </section>
         <script type="text/javascript" src="/scripts/lib.min.js"></script>

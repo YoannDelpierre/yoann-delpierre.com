@@ -1,0 +1,18 @@
+// File CSS contact
+.contact {
+    width: 100%;
+    &__item {
+        width: 33.33%;
+        text-align: center;
+        i {
+            @include font-size(14);
+            transition: transform .2s ease-in, opacity .2s ease-out;
+            transition-delay: 0, .1s;
+            &:hover {
+                transform: scale(1.05,1.05);
+                transition: opacity .3s ease-in;
+                opacity: .2;
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+// File CSS list
+.list {
+    display: table;
+    > li {
+        display: table-cell;
+    }
+}

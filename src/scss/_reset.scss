@@ -5,7 +5,7 @@
 }
 
 html {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: $colorText;
     font-size: 62.5%;
     height: 100%;
@@ -29,13 +29,7 @@ a {
     transition: color .5s ease-out;
     &:hover {
         text-decoration: none;
-        color: lighten($colorText, 30);
-    }
-    &.underline {
-        text-decoration: underline;
-        &:hover {
-            text-decoration: none;
-        }
+        color: lighten($colorText, 20);
     }
 }
 

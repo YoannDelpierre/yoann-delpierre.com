@@ -17,22 +17,18 @@
         background: rgba($colorLight,.9);
         border-radius: 10px;
         box-shadow: 0 0 50px 0 rgba($colorDark, .09);
-        transition: all .2S ease-out;
         @include rem(height,450px);
         @include rem(width,600px);
         @include rem(padding,20px);
         @media only screen and (max-width:$mediumScreen) {
             height: 75%;
             width: 90%;
-            transition: all .2S ease-in;
+            transition: all .2s ease-in;
         }
         &--intro {
             box-shadow: 0 0 50px 0 rgba($colorDark, .5);
             @include rem(width,300px);
-            @include rem(height,100px);
-            &:hover {
-                background: rgba($colorLight, 1);
-            }
+            @include rem(height,120px);
         }
     }
 }

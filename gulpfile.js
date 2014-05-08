@@ -10,7 +10,11 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     uglify = require('gulp-uglify'),
     jshint = require('gulp-jshint'),
+    iconfont = require('gulp-iconfont'),
+    iconfontCss = require('gulp-iconfont-css'),
     plumber = require('gulp-plumber');
+
+var fontName = 'icon';
 
 gulp.task('styles', function() {
     return gulp.src('src/scss/**/*.scss')
@@ -80,7 +84,7 @@ gulp.task('jshint', function() {
 gulp.task('scripts', function() {
     gulp.src('./src/js/*.js')
         .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest('./app/scripts/'))
         .pipe(connect.reload());
 });
@@ -91,19 +95,35 @@ gulp.task('images', ['clean'], function() {
             optimizationLevel: 5, progressive: true, interlaced: true
         }))
         .pipe(gulp.dest('./app/images'));
-})
+});
+
+gulp.task('iconfont', function(){
+    gulp.src(['./src/icons/*.svg'], {base : './src'})
+    .pipe(iconfontCss({
+    fontName: fontName,
+        path: './src/icons/_icons.scss',
+        targetPath: '../../src/scss/_icons.scss',
+        fontPath: '../icons/'
+    }))
+    .pipe(iconfont({
+        fontName: fontName
+    }))
+    .pipe(gulp.dest('./app/icons/'));
+});
 
 gulp.task('html', function() {
     return gulp.src('./src/*.html')
         .pipe(gulp.dest('./app'))
         .pipe(connect.reload())
-        .pipe(notify({message: 'Reload HTML done'}));
+        .pipe(notify({message: 'HTML done'}));
 });
 
 gulp.task('watch', function() {
     gulp.watch(['./src/*.html'], ['html']);
     gulp.watch(['./src/scss/**/*.scss'], ['styles']);
     gulp.watch(['./src/js/*.js'], ['scripts']);
+    gulp.watch(['./src/images/*.jpg'], ['images']);
+    gulp.watch(['./src/icons/*.svg'], ['iconfont', 'styles'])
 });
 
 gulp.task('connect', function() {
@@ -115,7 +135,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('default', function() {
-    gulp.start('html', 'styles', 'scripts', 'images', 'connect', 'watch');
+    gulp.start('html', 'images', 'iconfont', 'styles', 'scripts', 'connect', 'watch');
 });
 
-gulp.task('release', ['styles', 'lintCss', 'jshint', 'scripts', 'images']);
+gulp.task('release', ['iconfont', 'images', 'styles', 'lintCss', 'jshint', 'scripts']);

@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "icon";
+    src: url('../icons/icon.eot');
+    src: url('../icons/icon.eot?#iefix') format('eot'),
+        url('../icons/icon.woff') format('woff'),
+        url('../icons/icon.ttf') format('truetype'),
+        url('../icons/icon.svg#icon') format('svg');
+}
+
+%icon {
+    font-family: "icon";
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+    text-decoration: none;
+    text-transform: none;
+}
+
+@function icon-char($filename) {
+    $char: "";
+
+    @if $filename == email {
+        $char: "\E001";
+    }
+    @if $filename == github {
+        $char: "\E002";
+    }
+    @if $filename == twitter {
+        $char: "\E003";
+    }
+
+    @return $char;
+}
+
+@mixin icon($filename, $insert: before) {
+    &:#{$insert} {
+        @extend %icon;
+        content: icon-char($filename);
+    }
+}
+
+.icon-email {
+    @include icon(email);
+}
+.icon-github {
+    @include icon(github);
+}
+.icon-twitter {
+    @include icon(twitter);
+}
