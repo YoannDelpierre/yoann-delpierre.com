@@ -84,7 +84,7 @@ gulp.task('jshint', function() {
 gulp.task('scripts', function() {
     gulp.src('./src/js/*.js')
         .pipe(rename({suffix: '.min'}))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('./app/scripts/'))
         .pipe(connect.reload());
 });
@@ -111,15 +111,15 @@ gulp.task('iconfont', function(){
     .pipe(gulp.dest('./app/icon/'));
 });
 
-gulp.task('html', function() {
-    return gulp.src(['./src/*.html', './src/*.ico'])
+gulp.task('site', function() {
+    return gulp.src(['./src/*.html', './src/*.ico', './src/.htaccess', './src/*.pdf'])
         .pipe(gulp.dest('./app'))
         .pipe(connect.reload())
         .pipe(notify({message: 'HTML done'}));
 });
 
 gulp.task('watch', function() {
-    gulp.watch(['./src/*.html'], ['html']);
+    gulp.watch(['./src/*.html'], ['site']);
     gulp.watch(['./src/scss/**/*.scss'], ['styles']);
     gulp.watch(['./src/js/*.js'], ['scripts']);
     gulp.watch(['./src/images/*.jpg'], ['images']);
@@ -135,7 +135,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('default', function() {
-    gulp.start('html', 'images', 'iconfont', 'styles', 'scripts', 'connect', 'watch');
+    gulp.start('site', 'images', 'iconfont', 'styles', 'scripts', 'connect', 'watch');
 });
 
-gulp.task('release', ['clean', 'html', 'iconfont', 'images', 'styles', 'lintCss', 'jshint', 'scripts']);
+gulp.task('release', ['clean', 'site', 'iconfont', 'images', 'styles', 'lintCss', 'jshint', 'scripts']);
