@@ -14,9 +14,9 @@
         left: 0;
         bottom: 0;
         right: 0;
-        background: rgba($colorLight,.9);
+        background: rgba($colorLight,.95);
         border-radius: 10px;
-        box-shadow: 0 0 50px 0 rgba($colorDark, .09);
+        box-shadow: 0 0 50px 0 rgba($colorDark,.5);
         @include rem(padding,10px);
         @include rem(width,450px);
         @include rem(height,250px);
@@ -36,10 +36,10 @@
                 }
             }
         }
-        &--intro {
+        /*&--intro {
             box-shadow: 0 0 50px 0 rgba($colorDark, .5);
             @include rem(width,300px);
             @include rem(height,120px);
-        }
+        }*/
     }
 }

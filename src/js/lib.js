@@ -2,16 +2,25 @@
 
     'use strict';
 
-    var scrollObject = function (item) {
-        this.item = item
-    }
+    var current,
+        site = document.querySelector('.site');
 
-    scrollObject.prototype.scroll = function() {
-        var el = document.querySelector(this.item.children[0].hash);
-        window.scroll(0, el.offsetTop);
-    }
+    var ScrollObject = function (item) {
+        this.item = item;
+    };
 
-    scrollObject.prototype.init = function() {
+    ScrollObject.prototype.scroll = function() {
+        var animate = this.item.children[0].getAttribute('data-animate'),
+            animateClass = 'site--animate' + animate;
+        // apply class animate to body
+        if(current) {
+            site.classList.remove('site--animate' + current);
+        }
+        site.classList.add(animateClass);
+        current = animate;
+    };
+
+    ScrollObject.prototype.init = function() {
         // keep reference
         var self = this;
         // addEventListener
@@ -19,13 +28,13 @@
             event.preventDefault();
             self.scroll();
         }, false);
-    }
+    };
 
     var scrolls = document.querySelectorAll('.nav__item');
 
     function init(items) {
         for(var i = 0; i < items.length; i++) {
-            var item = new scrollObject(items[i]);
+            var item = new ScrollObject(items[i]);
             item.init();
         }
     }

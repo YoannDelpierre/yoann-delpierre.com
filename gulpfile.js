@@ -20,7 +20,7 @@ gulp.task('styles', function() {
     return gulp.src('src/scss/**/*.scss')
         .pipe(plumber())
         .pipe(sass())
-        .pipe(prefix("last 2 versions", "> 5%", "ie 8", "ie 7", { cascade: true }))
+        .pipe(prefix("last 3 versions", "> 5%", "ie 8", "ie 7", { cascade: true }))
         .pipe(plumber.stop())
         .pipe(rename({suffix: '.min'}))
         .pipe(minifyCss())
@@ -68,7 +68,7 @@ gulp.task('lintCss', function() {
 });
 
 gulp.task('clean', function () {
-    gulp.src(['./app/images'], {
+    gulp.src('./app/*', {
         read: false
     })
     .pipe(clean());
@@ -98,21 +98,21 @@ gulp.task('images', ['clean'], function() {
 });
 
 gulp.task('iconfont', function(){
-    gulp.src(['./src/icons/*.svg'], {base : './src'})
+    gulp.src(['./src/icon/*.svg'], {base : './src'})
     .pipe(iconfontCss({
     fontName: fontName,
-        path: './src/icons/_icons.scss',
+        path: './src/icon/_icons.scss',
         targetPath: '../../src/scss/_icons.scss',
-        fontPath: '../icons/'
+        fontPath: '../icon/'
     }))
     .pipe(iconfont({
         fontName: fontName
     }))
-    .pipe(gulp.dest('./app/icons/'));
+    .pipe(gulp.dest('./app/icon/'));
 });
 
 gulp.task('html', function() {
-    return gulp.src('./src/*.html')
+    return gulp.src(['./src/*.html', './src/*.ico'])
         .pipe(gulp.dest('./app'))
         .pipe(connect.reload())
         .pipe(notify({message: 'HTML done'}));
@@ -123,7 +123,7 @@ gulp.task('watch', function() {
     gulp.watch(['./src/scss/**/*.scss'], ['styles']);
     gulp.watch(['./src/js/*.js'], ['scripts']);
     gulp.watch(['./src/images/*.jpg'], ['images']);
-    gulp.watch(['./src/icons/*.svg'], ['iconfont', 'styles'])
+    gulp.watch(['./src/icon/*.svg'], ['iconfont', 'styles'])
 });
 
 gulp.task('connect', function() {
@@ -138,4 +138,4 @@ gulp.task('default', function() {
     gulp.start('html', 'images', 'iconfont', 'styles', 'scripts', 'connect', 'watch');
 });
 
-gulp.task('release', ['iconfont', 'images', 'styles', 'lintCss', 'jshint', 'scripts']);
+gulp.task('release', ['clean', 'html', 'iconfont', 'images', 'styles', 'lintCss', 'jshint', 'scripts']);

@@ -13,7 +13,7 @@
             display: block;
             text-align: center;
             font-weight: 700;
-            transition: transform .4s ease-out;
+            transition: transform .2s ease-out;
             @include rem(padding,10px);
             @include font-size(1.6);
             &:hover {
