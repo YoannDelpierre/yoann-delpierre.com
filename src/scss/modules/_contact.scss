@@ -10,11 +10,8 @@
         }
         i {
             @include font-size(14);
-            transition: transform .2s ease-in, opacity .2s ease-out;
-            transition-delay: 0, .1s;
+            // transition: opacity .5s ease-in;
             &:hover {
-                transform: scale(1.05,1.05);
-                transition: opacity .3s ease-in;
                 opacity: .2;
             }
             @media only screen and (max-width:$smallScreen) {

@@ -1,4 +1,4 @@
-(function (window, document) {
+(function () {
 
     'use strict';
 
@@ -13,7 +13,7 @@
         var animate = this.item.children[0].getAttribute('data-animate'),
             animateClass = 'site--animate' + animate;
         // apply class animate to body
-        if(current) {
+        if(current && current !== animate) {
             site.classList.remove('site--animate' + current);
         }
         site.classList.add(animateClass);
@@ -25,8 +25,10 @@
         var self = this;
         // addEventListener
         this.item.addEventListener('click', function () {
-            event.preventDefault();
-            self.scroll();
+            if(Modernizr.csstransitions) {
+                event.preventDefault();
+                self.scroll();
+            }
         }, false);
     };
 
@@ -41,4 +43,4 @@
 
     init(scrolls);
 
-})(window, document);
+})();

@@ -3,10 +3,6 @@
     background-size: cover;
     background-position: center center;
     // background-attachment: fixed;
-    background-image: url('/images/berlin.jpg');
-    @media only screen and (max-width:$smallScreen) {
-        background-image: url('/images/small/berlin.jpg');
-    }
 }
 .picture--about {
     background-image: url('/images/trail.jpg');
