@@ -1,9 +1,9 @@
 // File CSS site
 .site {
-    position: relative;
     height: 100%;
     width: 100%;
     transition: transform .5s ease-out;
+    backface-visibility: hidden;
     &--animate0 {
         transform: translate(0, 0);
     }

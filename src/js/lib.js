@@ -1,4 +1,4 @@
-(function () {
+/*(function () {
 
     'use strict';
 
@@ -12,7 +12,7 @@
     ScrollObject.prototype.scroll = function() {
         var animate = this.item.children[0].getAttribute('data-animate'),
             animateClass = 'site--animate' + animate;
-        // apply class animate to body
+        // apply class animate to site
         if(current && current !== animate) {
             site.classList.remove('site--animate' + current);
         }
@@ -43,4 +43,4 @@
 
     init(scrolls);
 
-})();
+})();*/

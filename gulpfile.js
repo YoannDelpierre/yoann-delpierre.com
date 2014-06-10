@@ -84,7 +84,7 @@ gulp.task('jshint', function() {
 gulp.task('scripts', function() {
     gulp.src('./src/js/*.js')
         .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest('./app/scripts/'))
         .pipe(connect.reload());
 });
