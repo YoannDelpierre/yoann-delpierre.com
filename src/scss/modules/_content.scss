@@ -3,7 +3,6 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
-    background: darken($colorLight,2);
     height: 100%;
     width: 100%;
     &__block {
@@ -15,7 +14,7 @@
         right: 0;
         top: 0;
         bottom: 0;
-        background: rgba($colorLight,.7);
+        background: rgba($colorLight,.9);
         box-shadow: 0 0 50px 0 rgba($colorDark,.5);
         @media only screen and (max-width:$smallScreen) {
             width: 100%;
