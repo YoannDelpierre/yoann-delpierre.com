@@ -1,4 +1,4 @@
-mySite
+yoann-delpierre.com
 ======
 
 Personnal website
