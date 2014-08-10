@@ -20,7 +20,10 @@ body {
     height: 100%;
     width: 100%;
     background: #333;
-    @include font-size(1.4);
+    @include font-size(1.6);
+    @media (max-width: $mediumScreen) {
+        @include font-size(1.4);
+    }
 }
 
 a {

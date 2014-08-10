@@ -1,22 +1,28 @@
 // File CSS contact
 .contact {
     width: 100%;
-    overflow: hidden;
+    display: table;
+    &__link {
+        text-decoration: none;
+    }
     &__item {
+        display: table-cell;
         width: 25%;
         text-align: center;
-        a {
-            text-decoration: none;
+        @media (max-width:$mediumScreen) {
+            display: inline-block;
+            width: 50%;
         }
-        i {
-            @include font-size(10);
-            transition: opacity .5s ease-in;
-            &:hover {
-                opacity: .5;
-            }
-            @media only screen and (max-width:$smallScreen) {
-                @include font-size(7);
-            }
+    }
+    &__icon {
+        @include font-size(10);
+        transition: transform .1s ease-in-out, opacity .2s ease-out;
+        &:hover {
+            opacity: .5;
+            transform: scale(1.05);
+        }
+        @media (max-width:$smallScreen) {
+            @include font-size(6);
         }
     }
 }
