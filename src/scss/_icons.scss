@@ -31,6 +31,9 @@
     @if $filename == twitter {
         $char: "\E003";
     }
+    @if $filename == viadeo {
+        $char: "\E004";
+    }
 
     @return $char;
 }
@@ -50,4 +53,7 @@
 }
 .icon-twitter {
     @include icon(twitter);
+}
+.icon-viadeo {
+    @include icon(viadeo);
 }

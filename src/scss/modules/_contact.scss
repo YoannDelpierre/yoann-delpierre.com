@@ -3,16 +3,16 @@
     width: 100%;
     overflow: hidden;
     &__item {
-        width: 33.33%;
+        width: 25%;
         text-align: center;
         a {
             text-decoration: none;
         }
         i {
-            @include font-size(14);
-            // transition: opacity .5s ease-in;
+            @include font-size(10);
+            transition: opacity .5s ease-in;
             &:hover {
-                opacity: .2;
+                opacity: .5;
             }
             @media only screen and (max-width:$smallScreen) {
                 @include font-size(7);
