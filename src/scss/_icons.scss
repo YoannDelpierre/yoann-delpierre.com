@@ -2,9 +2,9 @@
     font-family: "icon";
     src: url('../icon/icon.eot');
     src: url('../icon/icon.eot?#iefix') format('eot'),
+        url('../icon/icon.svg#icon') format('svg'),
         url('../icon/icon.woff') format('woff'),
-        url('../icon/icon.ttf') format('truetype'),
-        url('../icon/icon.svg#icon') format('svg');
+        url('../icon/icon.ttf') format('truetype');
 }
 
 %icon {

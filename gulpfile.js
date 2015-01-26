@@ -135,7 +135,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('default', function() {
-    gulp.start('site', 'images', 'iconfont', 'styles', 'scripts', 'connect', 'watch');
+    gulp.start('site', 'images', 'iconfont', 'styles', 'connect', 'watch');
 });
 
-gulp.task('release', ['clean', 'site', 'iconfont', 'images', 'styles', 'lintCss', 'jshint', 'scripts']);
+gulp.task('release', ['clean', 'site', 'iconfont', 'images', 'styles', 'lintCss']);

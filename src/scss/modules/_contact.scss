@@ -2,27 +2,23 @@
 .contact {
     width: 100%;
     display: table;
+
     &__link {
         text-decoration: none;
     }
+
     &__item {
         display: table-cell;
-        width: 25%;
+        width: 33%;
         text-align: center;
-        @media (max-width:$mediumScreen) {
-            display: inline-block;
-            width: 50%;
-        }
     }
+
     &__icon {
-        @include font-size(10);
+        font-size: 6em;
         transition: transform .1s ease-in-out, opacity .2s ease-out;
         &:hover {
             opacity: .5;
             transform: scale(1.05);
-        }
-        @media (max-width:$smallScreen) {
-            @include font-size(6);
         }
     }
 }
