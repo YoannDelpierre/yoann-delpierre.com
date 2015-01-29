@@ -1,0 +1,15 @@
+
+.yd-title {
+    margin: 0;
+    padding: .5em;
+    background-color: $keppel;
+    color: $blackHaze;
+    font-size: 2em;
+
+    transition: all .25s linear;
+
+    &:hover {
+        background-color: transparent;
+        color: $keppel;
+    }
+}

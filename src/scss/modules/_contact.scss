@@ -1,24 +1,28 @@
-// File CSS contact
-.contact {
-    width: 100%;
-    display: table;
 
-    &__link {
-        text-decoration: none;
-    }
+.yd-contact {
+    display: table;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 
     &__item {
         display: table-cell;
-        width: 33%;
+        width: 33.33%;
+        vertical-align: middle;
         text-align: center;
     }
 
     &__icon {
-        font-size: 6em;
-        transition: transform .1s ease-in-out, opacity .2s ease-out;
+        font-size: 10em;
+        color: $valencia;
+        transition: transform .3s linear;
+
         &:hover {
-            opacity: .5;
-            transform: scale(1.05);
+            transform:rotate(360deg);
+        }
+
+        @media (max-width: $smallScreen) {
+            font-size: 7em;
         }
     }
 }

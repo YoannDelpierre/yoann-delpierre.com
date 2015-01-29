@@ -20,8 +20,8 @@ gulp.task('styles', function() {
     return gulp.src('src/scss/**/*.scss')
         .pipe(plumber())
         .pipe(sass())
-        .pipe(prefix("last 3 versions", "> 5%", "ie 8", "ie 7", { cascade: true }))
-        .pipe(plumber.stop())
+        .pipe(plumber())
+        .pipe(prefix("last 3 versions", "> 5%"))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifyCss())
         .pipe(gulp.dest('./app/css'))
@@ -74,21 +74,6 @@ gulp.task('clean', function () {
     .pipe(clean());
 });
 
-gulp.task('jshint', function() {
-    gulp.src('./src/js/*.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'));
-});
-
-// JS concat, strip debugging and minify
-gulp.task('scripts', function() {
-    gulp.src('./src/js/*.js')
-        .pipe(rename({suffix: '.min'}))
-        //.pipe(uglify())
-        .pipe(gulp.dest('./app/scripts/'))
-        .pipe(connect.reload());
-});
-
 gulp.task('images', ['clean'], function() {
     return gulp.src(['./src/images/*.jpg', './src/images/**/*.jpg'])
         .pipe(imagemin({
@@ -121,7 +106,6 @@ gulp.task('site', function() {
 gulp.task('watch', function() {
     gulp.watch(['./src/*.html'], ['site']);
     gulp.watch(['./src/scss/**/*.scss'], ['styles']);
-    gulp.watch(['./src/js/*.js'], ['scripts']);
     gulp.watch(['./src/images/*.jpg'], ['images']);
     gulp.watch(['./src/icon/*.svg'], ['iconfont', 'styles'])
 });

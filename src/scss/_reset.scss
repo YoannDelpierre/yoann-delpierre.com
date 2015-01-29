@@ -1,11 +1,14 @@
-// My own reset
 @viewport {
    width: device-width;
    zoom: 1;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 html {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: $colorText;
     font-size: 62.5%;
     height: 100%;
@@ -17,19 +20,13 @@ html {
 body {
     margin: 0;
     padding: 0;
-    height: 100%;
     width: 100%;
-    background: #333;
-    font-size: 1.6em;
+    height: 100%;
+    background-color: $blackHaze;
 }
 
 a {
-    color: $colorText;
-    transition: color .5s ease-out;
-    &:hover {
-        text-decoration: none;
-        color: lighten($colorText, 20);
-    }
+    text-decoration: none;
 }
 
 ul {
